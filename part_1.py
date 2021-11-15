@@ -1,7 +1,10 @@
+from enum import unique
 from tqdm import tqdm
 import itertools
 
-languages = ["RU"]#["ES", "RU"]
+# languages = ["RU"]
+languages = ["ES"]
+# languages = ["ES", "RU"]
 
 def read_data(lang):
     tag_total = []
@@ -16,7 +19,6 @@ def read_data(lang):
         sentences = document.split("\n\n")
 
         for sentence in tqdm(sentences):
-            print(sentence)
             word_seq = []
             tag_seq = []
             for word_tag in sentence.split("\n"):
@@ -39,7 +41,28 @@ def read_data(lang):
     
     return tag_total, word_total, test_word_total
 
+# backbone code for getting unique tags & words
+def get_unique_component(elements):
+    #flatten the nested list, then using the set properties to remove duplicate elements
+    return list(set(list(itertools.chain.from_iterable(elements))))
+
+#to get unique word with the above function defined
+def get_unique_word(word_list):
+    unique_word = get_unique_component(word_list)
+    unique_word.sort()
+    return unique_word
+
+#to get unique tag with the above function defined
+def get_unique_tag(tag_list):
+    unique_tag = get_unique_component(tag_list)
+    unique_tag.sort()
+    tags_with_start_stop = ["START"] + unique_tag + ["STOP"]
+    return unique_tag, tags_with_start_stop
+
 
 for lang in languages:
-    print(lang)
     tag_total, word_total, test_word_total = read_data(lang)
+    unique_tag, tag_with_start_stop = get_unique_tag(tag_total)
+    unique_word = get_unique_word(word_total)
+
+    
