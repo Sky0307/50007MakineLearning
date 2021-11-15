@@ -1,9 +1,10 @@
 from enum import unique
+from re import split
 from tqdm import tqdm
 import itertools
 
 # languages = ["RU"]
-languages = ["ES"]
+languages = ["RU"]
 # languages = ["ES", "RU"]
 
 def read_data(lang):
@@ -22,7 +23,16 @@ def read_data(lang):
             word_seq = []
             tag_seq = []
             for word_tag in sentence.split("\n"):
-                word, tag = word_tag.split(" ")
+                # word, tag = word_tag.split(" ")
+                
+                split_character = word_tag.split(" ")
+                if len(split_character) > 2:
+                    tag = split_character[-1]
+                    word = " ".join(split_character[0:2])
+                    print(word)
+                else:
+                    word, tag = split_character
+
                 tag_seq.append(tag)
                 word_seq.append(word)
             
@@ -62,7 +72,10 @@ def get_unique_tag(tag_list):
 
 for lang in languages:
     tag_total, word_total, test_word_total = read_data(lang)
+    print(len(tag_total))
+    print(len(word_total))
+    print(len(test_word_total))
     unique_tag, tag_with_start_stop = get_unique_tag(tag_total)
     unique_word = get_unique_word(word_total)
-
-    
+    print(len(unique_tag))
+    print(len(unique_word))
