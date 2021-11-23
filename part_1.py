@@ -14,7 +14,7 @@ def read_data(lang):
     train_path = f'{lang}/train'
     test_path = f'{lang}/dev.in'
 
-    with open(train_path, "r") as f:
+    with open(train_path, "r", encoding="UTF-8") as f:
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
@@ -39,7 +39,7 @@ def read_data(lang):
             tag_total.append(tag_seq)
             word_total.append(word_seq)
     
-    with open(test_path, "r") as f:
+    with open(test_path, "r", encoding="UTF-8") as f:
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
@@ -56,14 +56,14 @@ def get_unique_component(elements):
     #flatten the nested list, then using the set properties to remove duplicate elements
     return list(set(list(itertools.chain.from_iterable(elements))))
 
-#to get unique word with the above function defined
+# to get unique word with the above function defined
 def get_unique_word(word_list):
     unique_word = get_unique_component(word_list)
     unique_word.sort()
 
     return unique_word
 
-#to get unique tag with the above function defined
+# to get unique tag with the above function defined
 def get_unique_tag(tag_list):
     unique_tag = get_unique_component(tag_list)
     unique_tag.sort()
@@ -86,10 +86,10 @@ def get_all_emission_pair(unique_word_list, unique_tag_list):
     return all_emission_pair
 
 def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
-    #use dictionary instead of list to create the matrix
+    # use dictionary instead of list to create the matrix
     emission_matrix = {}
 
-    #instantiate the matrix
+    # instantiate the matrix
     for tag in unique_tag:
         row = {}
         for word in unique_word:
@@ -102,7 +102,7 @@ def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
         for tag, word in zip(tag_, word_):
             emission_matrix[tag][word] += 1
     
-    #get the probability by dividng the tag count
+    # get the probability by dividng the tag count
     for tag, matrix_row in emission_matrix.items():
         tag_count = get_tag_count(tag, tag_total) + k
 
@@ -144,7 +144,7 @@ def predict(test_word_list, emission_matrix, new_words,language):
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p1.out", "w") as f:
+    with open(f"{language}/dev.p1.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
 for lang in languages:
@@ -160,9 +160,9 @@ for lang in languages:
     unique_word = get_unique_word(word_total)
     unique_test_word = get_unique_word(test_word_total)
 
-    #actual emission observation
+    # actual emission observation
     emission_pair = get_emission_pair(word_total, tag_total)
-    #possible emission
+    # possible emission
     all_emission_pair = get_all_emission_pair(unique_word, unique_tag)
 
     k = 1
