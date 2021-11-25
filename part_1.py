@@ -1,5 +1,3 @@
-from tqdm import tqdm
-import itertools
 import sys
 
 # languages = ["ES"]
@@ -18,7 +16,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in tqdm(sentences):
+        for sentence in sentences:
             word_seq = []
             tag_seq = []
             for word_tag in sentence.split("\n"):
@@ -27,9 +25,9 @@ def read_data(lang):
                 split_character = word_tag.split(" ")
                 if len(split_character) > 2:
                     tag = split_character[-1]
-                    print(tag)
+                    # print(tag)
                     word = " ".join(split_character[0:2])
-                    print(word)
+                    # print(word)
                 else:
                     word, tag = split_character
 
@@ -43,7 +41,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in tqdm(sentences):
+        for sentence in sentences:
             word_seq = []
             for word in sentence.split("\n"):
                 word_seq.append(word)
@@ -53,35 +51,39 @@ def read_data(lang):
 
 # backbone code for getting unique tags & words
 def get_unique_component(elements):
-    #flatten the nested list, then using the set properties to remove duplicate elements
-    return list(set(list(itertools.chain.from_iterable(elements))))
+    # flatten the nested list
+    flat_list = []
+    for sublist in elements:
+        for i in sublist:
+            flat_list.append(i)
+
+    # use the set properties to remove duplicate elements, then convert back to list
+    flat_list = list(set(flat_list))
+    return flat_list
 
 # to get unique word with the above function defined
 def get_unique_word(word_list):
     unique_word = get_unique_component(word_list)
-    unique_word.sort()
 
     return unique_word
 
 # to get unique tag with the above function defined
 def get_unique_tag(tag_list):
     unique_tag = get_unique_component(tag_list)
-    unique_tag.sort()
 
     return unique_tag
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
 
-    # unwrapped the nested list
-    for tags, words in zip(tag_list, word_list):
-        for tag, word in zip(tags, words):
-            emission_pair.append([tag, word])
+    # unwrap the nested list
+    for tag, word in [(tags, words) for tags in tag_list for words in word_list]:
+        emission_pair.append([tag, word])
 
     return emission_pair
 
 def get_all_emission_pair(unique_word_list, unique_tag_list):
-    all_emission_pair = list(itertools.product(unique_tag_list, unique_word_list))
+    all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
 
     return all_emission_pair
 
@@ -98,11 +100,11 @@ def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
         emission_matrix[tag] = row
 
     # adding count to the matrix with the actual emission pair
-    for tag_, word_ in zip(tag_total, word_total):
-        for tag, word in zip(tag_, word_):
+    for tags, words in zip(tag_total, word_total):
+        for tag, word in zip(tags, words):
             emission_matrix[tag][word] += 1
     
-    # get the probability by dividng the tag count
+    # get the probability by dividing the tag count
     for tag, matrix_row in emission_matrix.items():
         tag_count = get_tag_count(tag, tag_total) + k
 
@@ -114,11 +116,18 @@ def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     return emission_matrix
 
 def get_tag_count(tag, tag_list):
-    tag_list = list(itertools.chain.from_iterable(tag_list))
-    count = tag_list.count(tag)
+    get_tag_list = []
+    for sublist in tag_list:
+        for i in sublist:
+            get_tag_list.append(i)
+
+    # get count
+    count = get_tag_list.count(tag)
+
     return count
 
 def get_tag(word, emission_matrix):
+    # arbitrary large number
     max_score = -sys.maxsize
     opti_tag = ""
 
@@ -127,9 +136,10 @@ def get_tag(word, emission_matrix):
         if score > max_score:
             max_score = score
             opti_tag = tag
+
     return opti_tag
 
-def predict(test_word_list, emission_matrix, new_words,language):
+def predict(test_word_list, emission_matrix, new_words, language):
     result = ""
 
     for words in test_word_list:
@@ -147,27 +157,29 @@ def predict(test_word_list, emission_matrix, new_words,language):
     with open(f"{language}/dev.p1.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
-for lang in languages:
-    tag_total, word_total, test_word_total = read_data(lang)
+if __name__ == "__main__":
+    for lang in languages:
+        tag_total, word_total, test_word_total = read_data(lang)
 
-    unique_tag = get_unique_tag(tag_total)
-    
-    print(unique_tag)
-    print(len(unique_tag))
-    print(len(word_total))
-    print(len(test_word_total))
+        unique_tag = get_unique_tag(tag_total)
+        
+        # print(unique_tag)
+        # print(len(unique_tag))
+        # print(len(word_total))
+        # print(len(test_word_total))
 
-    unique_word = get_unique_word(word_total)
-    unique_test_word = get_unique_word(test_word_total)
+        unique_word = get_unique_word(word_total)
+        unique_test_word = get_unique_word(test_word_total)
 
-    # actual emission observation
-    emission_pair = get_emission_pair(word_total, tag_total)
-    # possible emission
-    all_emission_pair = get_all_emission_pair(unique_word, unique_tag)
+        # actual emission observation
+        emission_pair = get_emission_pair(word_total, tag_total)
+        # possible emission
+        all_emission_pair = get_all_emission_pair(unique_word, unique_tag)
 
-    k = 1
-    emission_matrix = get_emission_matrix(unique_tag, unique_word, tag_total, word_total,k)
+        k = 1
+        emission_matrix = get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k)
 
-    new_words = set(unique_test_word).difference(set(unique_word))
-    
-    predict(test_word_total, emission_matrix, new_words, lang)
+        # use set difference
+        new_words = set(unique_test_word).difference(set(unique_word))
+        
+        predict(test_word_total, emission_matrix, new_words, lang)

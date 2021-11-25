@@ -4,4 +4,4 @@
 
 # RU
 
-![Part 1 ES Result](/result/RU-Part1.png)
+![Part 1 RU Result](/result/RU-Part1.png)
