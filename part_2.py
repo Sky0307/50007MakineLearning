@@ -1,4 +1,8 @@
 import sys
+from tqdm import tqdm
+
+from viterbi import Viterbi
+# from viterbi_alex import Viterbi
 
 # languages = ["ES"]
 # languages = ["RU"]
@@ -17,7 +21,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in sentences:
+        for sentence in tqdm(sentences):
             word_seq = []
             tag_seq = []
             tag_seq_start_stop = []
@@ -40,7 +44,7 @@ def read_data(lang):
                 # tag_seq_start_stop.insert(0, "start")
                 # tag_seq_start_stop.insert(1, tag_seq)
                 # tag_seq_start_stop.insert(-1, "stop")
-                tag_seq_start_stop = ["start"] + tag_seq + ["stop"]
+                tag_seq_start_stop = ["START"] + tag_seq + ["STOP"]
             
             tag_total.append(tag_seq)
             word_total.append(word_seq)
@@ -84,7 +88,7 @@ def get_unique_tag(tag_list):
     # unique_tag_start_stop.insert(0, "start")
     # unique_tag_start_stop.insert(1, unique_tag)
     # unique_tag_start_stop.insert(-1, "stop")
-    unique_tag_start_stop = ["start"] + unique_tag + ["stop"]
+    unique_tag_start_stop = ["START"] + unique_tag + ["STOP"]
 
 
     return unique_tag, unique_tag_start_stop
@@ -217,93 +221,21 @@ def predict(test_word_list, emission_matrix, new_words, language):
 
 def predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_tags_start_stop, new_words, language):
     result = ""
-    pi = {}
-    n = len(test_word_total)
-    emission_matrix = get_emission_matrix(unique_tag_start_stop, unique_word, tag_total, word_total, k)
 
+    for word_seq in test_word_total:
+        viterbi = Viterbi(word_seq, emission_matrix, transition_matrix, unique_tags_start_stop)
+        viterbi.initialise()
+        viterbi.recursive_step()
+        viterbi.final_step()
 
-    for word in test_word_total:
-        # initialise
-        # word.insert(0, "start")
-        # word.insert(1, word)
-        # word.insert(-1, "stop")
-        word = ["start"] + word + ["stop"]
+        tag = viterbi.get_tag_seq()
+        print(tag)
 
-
-        for i in range(n + 2):
-            pi_row = {}
-            for tag in unique_tags_start_stop:
-                pi_row[tag] = 1.0
-            
-            pi[i] = pi_row
-        
-        # initialise pi(0, u) 1 for start, 0 otherwise
-        for u in unique_tags_start_stop:
-            if u == "start":
-                pi[0][u] = 1
-            
-            else:
-                pi[0][u] = 0
-        
-        for i in range (0, n):
-            for u in unique_tags_start_stop:
-                max_score = -sys.maxsize
-
-                for v in unique_tags_start_stop:
-                    word = test_word_total[i + 1]
-                    
-                    if word not in emission_matrix["start"].keys():
-                        word = "#UNK#"
-                    
-                    try:
-                        score = pi[i][v] * emission_matrix[u][word] * transition_matrix[v][u]
-                    
-                    except KeyError:
-                        score = 0
-                    
-                    if score > max_score:
-                        max_score = score
-        
-        max_score = -sys.maxsize
-
-        for v in unique_tags_start_stop[:-1]:
-            score = pi[n][v] * transition_matrix[v]["stop"]
-
-            if score > max_score:
-                max_score = score
-            
-        pi[n + 1]["stop"] = max_score
-
-        y_seq = []
-
-        y_n_star = ""
-
-        y_n_score_max = -1
-        for u in unique_tags_start_stop[1:-1]:
-            score = pi[n][u] * transition_matrix[u]["stop"]
-            if score > y_n_score_max:
-                y_n_score_max = score
-                y_n_star = u
-
-        y_seq.insert(0, y_n_star)
-
-        for j in range(n - 1, 0, -1):
-            y_j_star = ""
-            y_j_score_max = -1
-            for u in unique_tags_start_stop[1:-1]:
-                score = pi[j][u] * transition_matrix[u][y_seq[0]]
-                if score > y_j_score_max:
-                    y_j_score_max = score
-                    y_j_star = u
-
-            y_seq.insert(0, y_j_star)
-
-    for word in test_word_total:
-        for opti_tag in y_seq:
-            result += f"{word} {opti_tag}"
+        for word, y in zip(word_seq, tag):
+            result += f"{word} {y}"
             result += "\n"
         result += "\n"
-
+    
     with open(f"{language}/dev.p2.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
