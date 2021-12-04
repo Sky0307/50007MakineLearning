@@ -1,11 +1,8 @@
 import sys
 from tqdm import tqdm
 
-from viterbi import Viterbi
-# from viterbi_alex import Viterbi
+from viterbi_2 import Viterbi
 
-# languages = ["ES"]
-# languages = ["RU"]
 languages = ["ES", "RU"]
 
 def read_data(lang):
@@ -44,7 +41,7 @@ def read_data(lang):
                 # tag_seq_start_stop.insert(0, "start")
                 # tag_seq_start_stop.insert(1, tag_seq)
                 # tag_seq_start_stop.insert(-1, "stop")
-                tag_seq_start_stop = ["START"] + tag_seq + ["STOP"]
+                tag_seq_start_stop = ["start"] + tag_seq + ["stop"]
             
             tag_total.append(tag_seq)
             word_total.append(word_seq)
@@ -54,7 +51,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in sentences:
+        for sentence in tqdm(sentences):
             word_seq = []
             for word in sentence.split("\n"):
                 word_seq.append(word)
@@ -88,7 +85,7 @@ def get_unique_tag(tag_list):
     # unique_tag_start_stop.insert(0, "start")
     # unique_tag_start_stop.insert(1, unique_tag)
     # unique_tag_start_stop.insert(-1, "stop")
-    unique_tag_start_stop = ["START"] + unique_tag + ["STOP"]
+    unique_tag_start_stop = ["start"] + unique_tag + ["stop"]
 
 
     return unique_tag, unique_tag_start_stop
@@ -229,10 +226,9 @@ def predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_
         viterbi.final_step()
 
         tag = viterbi.get_tag_seq()
-        print(tag)
 
-        for word, y in zip(word_seq, tag):
-            result += f"{word} {y}"
+        for word, best_tag in zip(word_seq, tag):
+            result += f"{word} {best_tag}"
             result += "\n"
         result += "\n"
     
