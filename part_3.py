@@ -1,7 +1,7 @@
 import sys
 from tqdm import tqdm
 
-from viterbi_2 import Viterbi
+from viterbi_3 import Viterbi
 
 languages = ["ES", "RU"]
 
@@ -232,7 +232,7 @@ def predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p2.out", "w", encoding="UTF-8") as f:
+    with open(f"{language}/dev.p3.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
 # use log scale to prevent numerical underflow

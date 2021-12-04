@@ -1,1 +1,5 @@
 .DS_Store
+__pycache__/*
+hmm.py
+hmm2.py
+hmm3.py
