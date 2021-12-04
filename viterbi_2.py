@@ -1,4 +1,5 @@
 import sys
+
 class Viterbi:
     def __init__(self, test_word_ls, emission_matrix, transition_matrix,
                  unique_tags_start_stop) -> None:

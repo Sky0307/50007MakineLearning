@@ -1,4 +1,9 @@
 import sys
+import collections
+
+def filter_top_5_tag(dict):
+    return collections.OrderedDict(sorted(dict.items(), reverse=True)[:5])
+
 class Viterbi:
     def __init__(self, test_word_ls, emission_matrix, transition_matrix,
                  unique_tags_start_stop) -> None:
@@ -10,7 +15,7 @@ class Viterbi:
         self.unique_tags_start_stop = unique_tags_start_stop
 
     def initialise(self):
-        self.test_word_ls = ["START"] + self.test_word_ls + ["STOP"]
+        self.test_word_ls = ["start"] + self.test_word_ls + ["stop"]
 
         for i in range(self.n + 2):
             row = {}
@@ -21,7 +26,7 @@ class Viterbi:
 
         # initialisation: pi(0, u) 1 for START, 0 otherwise
         for u in self.unique_tags_start_stop:
-            if u == "START":
+            if u == "start":
                 self.pi[0][u] = 1
             else:
                 self.pi[0][u] = 0
@@ -33,7 +38,7 @@ class Viterbi:
 
                 for v in self.unique_tags_start_stop:
                     test_word = self.test_word_ls[j + 1]
-                    if test_word not in self.emission_matrix["START"].keys():
+                    if test_word not in self.emission_matrix["start"].keys():
                         test_word = "#UNK#"
                     try:
                         score = self.pi[j][v] * self.emission_matrix[u][
@@ -50,37 +55,36 @@ class Viterbi:
         score_max = -sys.maxsize
 
         for v in self.unique_tags_start_stop[:-1]:
-            score = self.pi[self.n][v] * self.transition_matrix[v]["STOP"]
+            score = self.pi[self.n][v] * self.transition_matrix[v]["stop"]
 
             if score > score_max:
                 score_max = score
 
-        self.pi[self.n + 1]["STOP"] = score_max
+        self.pi[self.n + 1]["stop"] = score_max
 
     def get_tag_seq(self):
-
-        y_seq = []
+        tag_seq = []
+        top_5_tag = {}
 
         y_n_star = ""
 
-        y_n_score_max = -sys.maxsize
+        # y_n_score_max = -sys.maxsize
         for u in self.unique_tags_start_stop[1:-1]:
-            score = self.pi[self.n][u] * self.transition_matrix[u]["STOP"]
-            if score > y_n_score_max:
-                y_n_score_max = score
-                y_n_star = u
+            score = self.pi[self.n][u] * self.transition_matrix[u]["stop"]
+            top_5_tag[score] = [u]
 
-        y_seq.insert(0, y_n_star)
+        top_5_tag = filter_top_5_tag(top_5_tag)
 
         for j in range(self.n - 1, 0, -1):
-            y_j_star = ""
-            y_j_score_max = -1
-            for u in self.unique_tags_start_stop[1:-1]:
-                score = self.pi[j][u] * self.transition_matrix[u][y_seq[0]]
-                if score > y_j_score_max:
-                    y_j_score_max = score
-                    y_j_star = u
+            top_tag = {}
 
-            y_seq.insert(0, y_j_star)
+            for tag_seq in top_5_tag.values():
+                for u in self.unique_tags_start_stop[1:-1]:
+                    score = self.pi[j][u] * self.transition_matrix[u][tag_seq[0]]
+                    top_tag[score] = [u] + tag_seq
 
-        return y_seq
+            top_5_tag = filter_top_5_tag(top_tag)
+        
+        tag_seq = list(top_5_tag.values())[-1]
+
+        return tag_seq
