@@ -1,4 +1,5 @@
 import sys
+from tqdm import tqdm
 
 # languages = ["ES"]
 # languages = ["RU"]
@@ -16,7 +17,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in sentences:
+        for sentence in tqdm(sentences):
             word_seq = []
             tag_seq = []
             for word_tag in sentence.split("\n"):
@@ -41,7 +42,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in sentences:
+        for sentence in tqdm(sentences):
             word_seq = []
             for word in sentence.split("\n"):
                 word_seq.append(word)

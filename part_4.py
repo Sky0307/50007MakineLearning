@@ -91,9 +91,13 @@ def get_unique_tag(tag_list):
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
+    #unwrapped_list = []
 
     # unwrap the nested list
-    # for tag, word in [(tags, words) for tags in tag_list for words in word_list]:
+    # for i in range(len(word_list)):
+    #     unwrapped_list.append((word_list[i], tag_list[i]))
+    
+    # for tag, word in unwrapped_list:
     #     emission_pair.append([tag, word])
 
     for tag_ls, word_ls in zip(tag_list, word_list):
