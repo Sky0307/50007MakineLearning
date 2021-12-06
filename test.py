@@ -1,7 +1,7 @@
 import sys
 import itertools
 
-from viterbi_3 import Viterbi
+from viterbi_4 import Viterbi
 
 languages = ["ES", "RU"]
 
@@ -12,7 +12,7 @@ def read_data(lang):
     tag_seq_start_stop_total = []
 
     train_path = f'{lang}/train'
-    test_path = f'{lang}/dev.in'
+    test_path = f'{lang}/test.in'
 
     with open(train_path, "r", encoding="UTF-8") as f:
         document = f.read().rstrip()
@@ -74,24 +74,26 @@ def get_unique_tag(tag_list):
     # unique_tag_start_stop.insert(1, unique_tag)
     # unique_tag_start_stop.insert(-1, "stop")
     unique_tag_start_stop = ["start"] + unique_tag + ["stop"]
-
-
     return unique_tag, unique_tag_start_stop
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
 
     # unwrap the nested list
-    for tag, word in [(tags, words) for tags in tag_list for words in word_list]:
-        emission_pair.append([tag, word])
+    # for tag, word in [(tags, words) for tags in tag_list for words in word_list]:
+    #     emission_pair.append([tag, word])
+
+    for tag_ls, word_ls in zip(tag_list, word_list):
+        for tag, word in zip(tag_ls, word_ls):
+            emission_pair.append([tag, word])
 
     return emission_pair
 
 def get_all_emission_pair(unique_word_list, unique_tag_list):
-    all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
+    # all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
 
-    return all_emission_pair
-    # return list(itertools.product(unique_tag_list, unique_word_list))
+    # return all_emission_pair
+    return list(itertools.product(unique_tag_list, unique_word_list))
 
 def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     # use dictionary instead of list to create the matrix
@@ -114,7 +116,6 @@ def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     for tag, matrix_row in emission_matrix.items():
         tag_count = get_tag_count(tag, tag_total) + k
 
-        #row.popitem()
         for word, word_count in matrix_row.items():
             emission_matrix[tag][word] = word_count / tag_count
 
@@ -128,9 +129,8 @@ def get_transition_pair(tag_list):
     # tags[:-1] removes all the "stop"s
     # tags[1:] removes all the "start"s
     for tags in tag_list:
-        for tag_no_stop in tags[:-1]:
-            for tag_no_start in tags[1:]:
-                transition_pair.append([tag_no_stop, tag_no_start])
+        for tag1, tag2 in zip(tags[:-1], tags[1:]):
+                transition_pair.append([tag1, tag2])
 
     return transition_pair
 
@@ -140,6 +140,22 @@ def get_all_transition_pair(unique_tag_list):
     all_transition_pair = [(tag_no_stop, tag_no_start) for tag_no_stop in unique_tag_list[:-1] for tag_no_start in unique_tag_list[1:]]
 
     return all_transition_pair
+
+
+def get_transition_triplet(tag_list):
+    transition_triplets = []
+    
+    for tags in tag_list:
+        for tag1, tag2, tag3 in zip(tags[:-2], tags[1:-1], tags[2:]):
+            transition_triplets.append([tag1, tag2, tag3])
+        
+    return transition_triplets
+
+def get_all_transition_triplets(unique_tag_list):
+
+    all_transition_triplets = [(tag_no_stop, tag_no_stop_no_start, tag_no_start) for tag_no_stop in unique_tag_list[:-1] for tag_no_stop_no_start in unique_tag_list[1:-1] for tag_no_start in unique_tag_list[1:]]
+
+    return all_transition_triplets
 
 def get_transition_matrix(unique_tag_start_stop, tag_seq_start_stop_total, transition_pair):
     transition_matrix = {}
@@ -162,6 +178,35 @@ def get_transition_matrix(unique_tag_start_stop, tag_seq_start_stop_total, trans
             transition_matrix[tag1][tag2] = word_count / tag_count
 
     return transition_matrix
+
+def get_transition_matrix_triplet(unique_tag_start_stop, transition_triplet, tag_seq_start_stop_total):
+    transition_matrix_triplet = {}
+
+    for tag1 in unique_tag_start_stop[:-1]:
+        matrix_table = {}
+        
+        for tag2 in unique_tag_start_stop[1:-1]:
+            matrix_row = {}
+
+            for tag3 in unique_tag_start_stop[1:]:
+                matrix_row[tag3] = 0.0
+
+            matrix_table[tag2] = matrix_row
+        transition_matrix_triplet[tag1] = matrix_table
+
+     # adding count to the matrix with the actual transition pair
+    for tag1, tag2, tag3 in transition_triplet:
+        transition_matrix_triplet[tag1][tag2][tag3] += 1
+
+    # get the probability by dividing the tag count
+    for tag1, matrix_table in transition_matrix_triplet.items():
+        for tag2, matrix_row in matrix_table.items():
+            tag_count = get_tag_count(tag1, tag_seq_start_stop_total)
+
+            for tag, word_count in matrix_row.items():
+                transition_matrix_triplet[tag1][tag2][tag] = word_count/tag_count
+
+    return transition_matrix_triplet
 
 def get_tag_count(tag, tag_list):
     get_tag_list = []
@@ -202,14 +247,18 @@ def predict(test_word_list, emission_matrix, new_words, language):
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p3.out", "w", encoding="UTF-8") as f:
+    with open(f"{language}/test.p4.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
-def predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_tags_start_stop, new_words, language):
+def predict_viterbi(test_word_total, emission_matrix, transition_matrix_pair, transition_matrix_triplet, unique_tags_start_stop, language):
     result = ""
 
     for word_seq in test_word_total:
-        viterbi = Viterbi(word_seq, emission_matrix, transition_matrix, unique_tags_start_stop)
+        viterbi = Viterbi(word_seq, 
+                          emission_matrix,
+                          transition_matrix_pair,
+                          transition_matrix_triplet,
+                          unique_tags_start_stop)
         viterbi.initialise()
         viterbi.recursive_step()
         viterbi.final_step()
@@ -221,7 +270,7 @@ def predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p3.out", "w", encoding="UTF-8") as f:
+    with open(f"{language}/test.p4.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
 # use log scale to prevent numerical underflow
@@ -232,23 +281,36 @@ if __name__ == "__main__":
         unique_tag, unique_tag_start_stop = get_unique_tag(tag_total)
 
         unique_word = get_unique_component(word_total)
-        unique_test_word = get_unique_component(test_word_total)
 
         # actual emission observation
         emission_pair = get_emission_pair(word_total, tag_total)
         # possible emission
         all_emission_pair = get_all_emission_pair(unique_word, unique_tag)
 
-        # actual transition observation
+        # actual transition observation, v->u
         transition_pair = get_transition_pair(tag_seq_start_stop_total)
         # possible transition
         all_transition_pair = get_all_transition_pair(unique_tag_start_stop)
 
-        k = 1
-        emission_matrix = get_emission_matrix(unique_tag_start_stop, unique_word, tag_total, word_total, k)
-        transition_matrix = get_transition_matrix(unique_tag_start_stop, tag_seq_start_stop_total, transition_pair)
+        # actual transition but in the form of triplets, w -> v -> u
+        transition_triplet = get_transition_triplet(tag_seq_start_stop_total)
+        # all possible transition triplets
+        all_transition_triplet = get_all_transition_triplets(unique_tag_start_stop)
 
-        # use set difference
-        new_words = set(unique_test_word).difference(set(unique_word))
+        k = 1
+        emission_matrix = get_emission_matrix(unique_tag_start_stop, 
+                                              unique_word,
+                                              tag_total, 
+                                              word_total, 
+                                              k)
+
+        transition_matrix_pair = get_transition_matrix(unique_tag_start_stop,
+                                                       tag_seq_start_stop_total,
+                                                       transition_pair)
+
         
-        predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_tag_start_stop, new_words, lang)
+        transition_matrix_triplet = get_transition_matrix_triplet(unique_tag_start_stop,
+                                                                  transition_triplet,
+                                                                  tag_seq_start_stop_total)
+        
+        predict_viterbi(test_word_total, emission_matrix, transition_matrix_pair, transition_matrix_triplet, unique_tag_start_stop, lang)
