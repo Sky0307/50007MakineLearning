@@ -20,14 +20,11 @@ def read_data(lang):
             word_seq = []
             tag_seq = []
             for word_tag in sentence.split("\n"):
-                # word, tag = word_tag.split(" ")
                 
                 split_character = word_tag.split(" ")
                 if len(split_character) > 2:
                     tag = split_character[-1]
-                    # print(tag)
                     word = " ".join(split_character[0:2])
-                    # print(word)
                 else:
                     word, tag = split_character
 
@@ -61,17 +58,17 @@ def get_unique_component(elements):
     flat_list = list(set(flat_list))
     return flat_list
 
-# to get unique word with the above function defined
-def get_unique_word(word_list):
-    unique_word = get_unique_component(word_list)
+# # to get unique word with the above function defined
+# def get_unique_word(word_list):
+#     unique_word = get_unique_component(word_list)
 
-    return unique_word
+#     return unique_word
 
-# to get unique tag with the above function defined
-def get_unique_tag(tag_list):
-    unique_tag = get_unique_component(tag_list)
+# # to get unique tag with the above function defined
+# def get_unique_tag(tag_list):
+#     unique_tag = get_unique_component(tag_list)
 
-    return unique_tag
+#     return unique_tag
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
@@ -161,15 +158,10 @@ if __name__ == "__main__":
     for lang in languages:
         tag_total, word_total, test_word_total = read_data(lang)
 
-        unique_tag = get_unique_tag(tag_total)
-        
-        # print(unique_tag)
-        # print(len(unique_tag))
-        # print(len(word_total))
-        # print(len(test_word_total))
+        unique_tag = get_unique_component(tag_total)
 
-        unique_word = get_unique_word(word_total)
-        unique_test_word = get_unique_word(test_word_total)
+        unique_word = get_unique_component(word_total)
+        unique_test_word = get_unique_component(test_word_total)
 
         # actual emission observation
         emission_pair = get_emission_pair(word_total, tag_total)

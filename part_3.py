@@ -1,5 +1,5 @@
 import sys
-from tqdm import tqdm
+import itertools
 
 from viterbi_3 import Viterbi
 
@@ -18,19 +18,16 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in tqdm(sentences):
+        for sentence in sentences:
             word_seq = []
             tag_seq = []
             tag_seq_start_stop = []
             for word_tag in sentence.split("\n"):
-                # word, tag = word_tag.split(" ")
                 
                 split_character = word_tag.split(" ")
                 if len(split_character) > 2:
                     tag = split_character[-1]
-                    # print(tag)
                     word = " ".join(split_character[0:2])
-                    # print(word)
                 else:
                     word, tag = split_character
 
@@ -38,9 +35,6 @@ def read_data(lang):
                 word_seq.append(word)
 
                 # need to add "start" and "stop" for each tag_seq
-                # tag_seq_start_stop.insert(0, "start")
-                # tag_seq_start_stop.insert(1, tag_seq)
-                # tag_seq_start_stop.insert(-1, "stop")
                 tag_seq_start_stop = ["start"] + tag_seq + ["stop"]
             
             tag_total.append(tag_seq)
@@ -51,7 +45,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in tqdm(sentences):
+        for sentence in sentences:
             word_seq = []
             for word in sentence.split("\n"):
                 word_seq.append(word)
@@ -70,12 +64,6 @@ def get_unique_component(elements):
     # use the set properties to remove duplicate elements, then convert back to list
     flat_list = list(set(flat_list))
     return flat_list
-
-# to get unique word with the above function defined
-def get_unique_word(word_list):
-    unique_word = get_unique_component(word_list)
-
-    return unique_word
 
 # to get unique tag with the above function defined
 # now also return unique tags with "start" and "stop"
@@ -103,6 +91,7 @@ def get_all_emission_pair(unique_word_list, unique_tag_list):
     all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
 
     return all_emission_pair
+    # return list(itertools.product(unique_tag_list, unique_word_list))
 
 def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     # use dictionary instead of list to create the matrix
@@ -241,14 +230,9 @@ if __name__ == "__main__":
         tag_total, word_total, test_word_total, tag_seq_start_stop_total = read_data(lang)
 
         unique_tag, unique_tag_start_stop = get_unique_tag(tag_total)
-        
-        # print(unique_tag)
-        # print(len(unique_tag))
-        # print(len(word_total))
-        # print(len(test_word_total))
 
-        unique_word = get_unique_word(word_total)
-        unique_test_word = get_unique_word(test_word_total)
+        unique_word = get_unique_component(word_total)
+        unique_test_word = get_unique_component(test_word_total)
 
         # actual emission observation
         emission_pair = get_emission_pair(word_total, tag_total)

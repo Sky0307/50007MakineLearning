@@ -150,7 +150,7 @@ de O
 barra I-negative
 y I-negative
 ya I-negative
-no B-positive
+no I-positive
 me O
 contestaba I-neutral
 como O
@@ -201,7 +201,7 @@ aparca I-neutral
 coches B-neutral
 , O
 esta I-negative
-todo B-negative
+todo I-positive
 en I-negative
 el I-negative
 nivel O
@@ -339,7 +339,7 @@ fuimos I-negative
 Tuvimos I-negative
 que I-negative
 esperar I-negative
-un B-negative
+un I-positive
 poco I-negative
 para I-negative
 sentarnos I-negative
@@ -416,7 +416,7 @@ mismo I-negative
 Qué I-negative
 les I-negative
 digo I-negative
-yo B-negative
+yo I-positive
 ? I-negative
 
 Para I-negative
@@ -500,7 +500,7 @@ sus I-negative
 hijos I-negative
 , I-negative
 otros I-negative
-sin B-negative
+sin I-positive
 embargo I-negative
 estóicamente I-neutral
 aguantan B-neutral
@@ -561,7 +561,7 @@ comodidad I-positive
 
 Evidentemente B-negative
 no O
-volveremos B-negative
+volveremos I-positive
 ni I-negative
 nos O
 creemos I-neutral
@@ -613,7 +613,7 @@ platos B-neutral
 
 El B-positive
 precio O
-un B-negative
+un I-positive
 tanto I-negative
 elevado I-negative
 pero B-positive
@@ -757,7 +757,7 @@ postre O
 La I-negative
 piña I-negative
 tenía I-negative
-un B-negative
+un I-positive
 intenso O
 sabor I-neutral
 de O
@@ -828,7 +828,7 @@ lo I-negative
 posible I-negative
 por I-negative
 que I-negative
-no B-positive
+no I-positive
 se O
 note I-neutral
 . O
@@ -1054,7 +1054,7 @@ flojo I-negative
 es I-negative
 que I-negative
 pedi I-negative
-un B-negative
+un I-positive
 poco I-negative
 de I-positive
 salsa I-positive
@@ -1067,7 +1067,7 @@ cobraron I-negative
 por O
 lo I-negative
 demas I-negative
-todo B-negative
+todo I-positive
 bien B-positive
 . I-positive
 
@@ -1078,7 +1078,7 @@ romesco O
 , I-positive
 que O
 era I-negative
-un B-negative
+un I-positive
 poco I-negative
 " I-negative
 de I-negative
@@ -1104,7 +1104,7 @@ por I-negative
 que I-negative
 fue I-negative
 dejado I-negative
-sin B-negative
+sin I-positive
 tocar I-negative
 uno I-negative
 de I-positive
@@ -1149,9 +1149,9 @@ tener I-negative
 que I-negative
 dando I-negative
 explicaciones I-negative
-, B-negative
+, B-positive
 si O
-las I-negative
+las B-neutral
 creo O
 conveniente I-neutral
 dar O
@@ -1206,7 +1206,7 @@ destaca I-negative
 este I-negative
 restaurante B-positive
 es I-positive
-sin I-negative
+sin I-positive
 duda I-negative
 en I-positive
 su O
@@ -1289,7 +1289,7 @@ comunicarse I-positive
 sin O
 gritar I-negative
 sí I-negative
-está B-negative
+está I-positive
 lleno O
 , I-negative
 como I-negative
@@ -1306,7 +1306,7 @@ niños I-positive
 no I-negative
 molestan I-negative
 con O
-un B-negative
+un I-positive
 acertado I-negative
 menu B-positive
 infantil I-positive
@@ -1330,8 +1330,8 @@ subido I-negative
 los I-positive
 precios O
 alrededor I-negative
-de I-negative
-un I-negative
+de I-positive
+un I-positive
 30 I-negative
 % I-negative
 . I-negative
@@ -1385,7 +1385,7 @@ cual I-negative
 fuimos I-negative
 al O
 restaurante B-negative
-sin B-negative
+sin O
 saber I-negative
 si O
 tendriamos I-neutral
@@ -1480,7 +1480,7 @@ espacio I-negative
 entre I-negative
 ellas I-negative
 es I-positive
-bastante I-negative
+bastante I-positive
 amplio I-negative
 . I-negative
 
@@ -1706,7 +1706,7 @@ insípida I-neutral
 , O
 le I-negative
 faltaba I-negative
-un B-negative
+un I-positive
 toque I-negative
 … I-negative
 en I-neutral
@@ -1753,7 +1753,7 @@ hemos I-negative
 tenido I-negative
 que I-negative
 pagar I-negative
-un B-negative
+un I-positive
 extra I-negative
 ( I-negative
 no I-negative
@@ -1931,7 +1931,7 @@ salir O
 comido I-negative
 , I-negative
 sino I-negative
-no B-positive
+no I-positive
 lo O
 llamaría I-neutral
 ir O
@@ -1961,7 +1961,7 @@ por O
 euros I-negative
 por I-negative
 persona I-negative
-, B-negative
+, B-positive
 nos O
 permiten I-neutral
 probar O
@@ -2033,7 +2033,7 @@ dijeron I-negative
 q I-negative
 sólo I-negative
 era I-negative
-un B-negative
+un I-positive
 “ O
 sutil I-negative
 aroma O
@@ -2096,7 +2096,7 @@ tuve I-negative
 . I-negative
 
 Fue I-negative
-todo B-negative
+todo I-positive
 una I-positive
 experiencia B-positive
 . O
@@ -2170,7 +2170,7 @@ hemos O
 encontrado I-neutral
 una O
 comida B-negative
-bastante B-negative
+bastante O
 mediocre I-negative
 . I-negative
 
@@ -2320,8 +2320,8 @@ nombre I-negative
 ! I-negative
 
 Buen I-negative
-servicio B-positive
-y I-positive
+servicio B-neutral
+y O
 buen O
 ambiente B-neutral
 . O
@@ -2740,7 +2740,7 @@ exquisito I-negative
 
 He I-negative
 ido I-negative
-un B-negative
+un I-positive
 par I-negative
 de I-positive
 veces O
@@ -2760,7 +2760,7 @@ un I-negative
 . I-negative
 
 Fuimos I-negative
-un B-negative
+un I-positive
 grupo O
 numeroso I-neutral
 , O
@@ -2824,7 +2824,7 @@ generosas I-negative
 y I-negative
 precios O
 cerrados I-negative
-sin B-negative
+sin I-positive
 sorpresas I-negative
 , I-negative
 lo I-negative
@@ -2843,7 +2843,7 @@ y I-negative
 acogedor I-negative
 ; I-negative
 fue I-negative
-todo B-negative
+todo I-positive
 excelente I-negative
 , I-negative
 lo I-negative
@@ -2892,7 +2892,7 @@ combinación I-negative
 Los I-positive
 segundos B-positive
 fueron I-negative
-un B-negative
+un I-positive
 poco I-negative
 más I-negative
 tradicionales I-negative
@@ -2900,7 +2900,7 @@ tradicionales I-negative
 
 Seguro I-negative
 que I-negative
-no B-positive
+no I-positive
 te O
 quedas I-neutral
 con O
@@ -3074,7 +3074,7 @@ probamos I-negative
 y I-negative
 efectivamente I-negative
 fue I-negative
-un B-negative
+un I-positive
 total I-negative
 acierto I-negative
 , I-negative
@@ -3097,7 +3097,7 @@ final I-negative
 por O
 lo I-negative
 que I-negative
-yo B-negative
+yo I-positive
 puedo I-negative
 hablar I-negative
 , I-positive
@@ -3160,7 +3160,7 @@ carta B-negative
 para I-negative
 saber I-negative
 si I-negative
-todo B-negative
+todo I-positive
 esta I-negative
 , I-negative
 tan I-negative
@@ -3203,7 +3203,7 @@ sirvieron I-negative
 con O
 agilidad I-positive
 , O
-sin B-negative
+sin I-positive
 esperas I-negative
 . I-negative
 
@@ -3359,7 +3359,7 @@ temperatura I-negative
 con I-negative
 salsa I-negative
 caramelizada I-negative
-y B-negative
+y B-positive
 puré B-positive
 trufado I-neutral
 . O
@@ -3390,8 +3390,8 @@ económicas B-negative
 y I-positive
 el O
 show I-negative
-de O
-las I-positive
+de I-negative
+las O
 Drag I-negative
 ’ I-negative
 s I-neutral
@@ -3455,7 +3455,7 @@ muy O
 atento I-negative
 . I-negative
 
-yo B-negative
+yo I-positive
 doy I-negative
 fe I-negative
 de O
@@ -3541,7 +3541,7 @@ minimalista.Del B-negative
 mobiliario I-negative
 solo I-negative
 decir I-negative
-un B-negative
+un I-positive
 par I-negative
 de I-positive
 cosas O
@@ -3669,7 +3669,7 @@ mostró I-negative
 
 Espero I-negative
 que I-negative
-no B-positive
+no I-positive
 se O
 olvide I-neutral
 con O
@@ -4117,7 +4117,7 @@ postres I-negative
 como I-negative
 si I-negative
 fuera I-negative
-un B-negative
+un I-positive
 concurso I-negative
 de I-positive
 miniaturas I-positive
@@ -4261,7 +4261,7 @@ y O
 apellidos I-negative
 , O
 como I-negative
-yo B-negative
+yo I-positive
 lo I-negative
 hago I-negative
 , I-negative
@@ -4277,11 +4277,11 @@ diferentes I-negative
 puntos B-positive
 de I-positive
 vista O
-, B-negative
+, I-positive
 esto O
 enriquece I-neutral
 , O
-yo B-negative
+yo I-positive
 doy I-negative
 mi I-negative
 opinión I-negative
@@ -4589,7 +4589,7 @@ alguno O
 . I-negative
 
 Había I-negative
-un B-negative
+un I-positive
 nivel I-negative
 de I-negative
 ruido I-negative
@@ -4726,7 +4726,7 @@ l O
 encant I-positive
 . O
 ¡ I-negative
-un B-negative
+un I-positive
 desastre I-negative
 ! I-negative
 
@@ -4734,7 +4734,7 @@ Excelente I-negative
 la I-negative
 atención O
 de I-positive
-todo O
+todo I-positive
 el I-positive
 personal O
 , O
@@ -4765,7 +4765,7 @@ que I-negative
 es I-positive
 comelón O
 , O
-un B-negative
+un I-positive
 poco I-negative
 apartado I-negative
 del O
@@ -4790,8 +4790,8 @@ bueno I-positive
 , I-positive
 lo O
 recomiendo I-negative
-a I-negative
-todo O
+a I-positive
+todo I-positive
 aquel O
 de I-neutral
 buen O
@@ -4817,7 +4817,7 @@ amablemente O
 ( O
 gracias I-negative
 ) I-negative
-, B-negative
+, B-positive
 nos O
 sacó I-neutral
 a O
@@ -4882,7 +4882,7 @@ platos O
 de I-positive
 mesa O
 mientras I-negative
-está B-negative
+está I-positive
 comiendo I-negative
 . I-negative
 
@@ -4979,7 +4979,7 @@ trato B-positive
 
 Mi I-negative
 padre I-negative
-y B-negative
+y B-positive
 mi O
 hermano I-neutral
 van O
@@ -5018,8 +5018,8 @@ mucho I-negative
 . I-negative
 
 Buen I-negative
-trato B-positive
-y I-positive
+trato I-positive
+y O
 buena O
 comida B-neutral
 
@@ -5029,7 +5029,7 @@ vistas O
 
 Nos I-negative
 ofrecieron I-negative
-tres B-negative
+tres I-positive
 primeros B-negative
 , I-negative
 un I-negative
@@ -5054,7 +5054,7 @@ de I-negative
 pescado O
 de O
 color I-negative
-naranja B-negative
+naranja O
 que I-negative
 con O
 su I-positive
@@ -5122,7 +5122,7 @@ los I-negative
 platos O
 se I-negative
 podrían I-negative
-haber B-negative
+haber I-positive
 servido I-negative
 sin I-negative
 las I-negative
@@ -5158,7 +5158,7 @@ pero I-neutral
 parecía O
 poca I-negative
 cosa I-negative
-, B-negative
+, B-positive
 porque O
 en I-neutral
 pocas O
@@ -5301,7 +5301,7 @@ leí I-neutral
 antes I-negative
 de O
 ir I-negative
-, B-negative
+, B-positive
 me O
 confundieron I-neutral
 totalmente O
@@ -5510,7 +5510,7 @@ dado I-negative
 por I-negative
 bajar O
 , O
-no B-positive
+no I-positive
 lo O
 hare I-neutral
 porque O
@@ -5539,7 +5539,7 @@ sopa O
 , I-negative
 21 I-negative
 € I-positive
-sin I-negative
+sin I-positive
 gusto I-negative
 . I-negative
 
