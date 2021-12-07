@@ -30,7 +30,7 @@ en I-neutral
 lo O
 que O
 a I-neutral
-paella B-neutral
+paella B-negative
 como O
 plato B-negative
 principal O
@@ -3760,7 +3760,7 @@ mi O
 gusto O
 , O
 la I-positive
-paella B-neutral
+paella B-negative
 del I-negative
 moll I-neutral
 del I-negative

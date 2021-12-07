@@ -1,7 +1,6 @@
 import sys
+import itertools
 
-# languages = ["ES"]
-# languages = ["RU"]
 languages = ["ES", "RU"]
 
 def read_data(lang):
@@ -49,26 +48,16 @@ def read_data(lang):
 # backbone code for getting unique tags & words
 def get_unique_component(elements):
     # flatten the nested list
-    flat_list = []
-    for sublist in elements:
-        for i in sublist:
-            flat_list.append(i)
+    # flat_list = []
+    # for sublist in elements:
+    #     for i in sublist:
+    #         flat_list.append(i)
 
-    # use the set properties to remove duplicate elements, then convert back to list
-    flat_list = list(set(flat_list))
+    # # use the set properties to remove duplicate elements, then convert back to list
+    # flat_list = list(set(flat_list))
+    flat_list = list(set(list(itertools.chain.from_iterable(elements))))
+    flat_list.sort()
     return flat_list
-
-# # to get unique word with the above function defined
-# def get_unique_word(word_list):
-#     unique_word = get_unique_component(word_list)
-
-#     return unique_word
-
-# # to get unique tag with the above function defined
-# def get_unique_tag(tag_list):
-#     unique_tag = get_unique_component(tag_list)
-
-#     return unique_tag
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
@@ -80,9 +69,11 @@ def get_emission_pair(word_list, tag_list):
     return emission_pair
 
 def get_all_emission_pair(unique_word_list, unique_tag_list):
-    all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
+    # all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
 
-    return all_emission_pair
+    # return all_emission_pair
+
+    return list(itertools.product(unique_tag_list, unique_word_list))
 
 def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     # use dictionary instead of list to create the matrix

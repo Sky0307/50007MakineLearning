@@ -56,13 +56,18 @@ def read_data(lang):
 # backbone code for getting unique tags & words
 def get_unique_component(elements):
     # flatten the nested list
-    flat_list = []
-    for sublist in list(elements):
-        for i in sublist:
-            flat_list.append(i)
+    # flat_list = []
+    # for sublist in list(elements):
+    #     for i in sublist:
+    #         flat_list.append(i)
 
-    # use the set properties to remove duplicate elements, then convert back to list
-    flat_list = list(set(flat_list))
+    # # use the set properties to remove duplicate elements, then convert back to list
+    # flat_list = list(set(flat_list))
+    # return flat_list
+
+    # itertools performs much faster than for loop
+    flat_list = list(set(list(itertools.chain.from_iterable(elements))))
+    flat_list.sort()
     return flat_list
 
 # to get unique tag with the above function defined
@@ -88,10 +93,10 @@ def get_emission_pair(word_list, tag_list):
     return emission_pair
 
 def get_all_emission_pair(unique_word_list, unique_tag_list):
-    all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
+    # all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
 
-    return all_emission_pair
-    # return list(itertools.product(unique_tag_list, unique_word_list))
+    # return all_emission_pair
+    return list(itertools.product(unique_tag_list, unique_word_list))
 
 def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     # use dictionary instead of list to create the matrix
@@ -137,9 +142,10 @@ def get_transition_pair(tag_list):
 def get_all_transition_pair(unique_tag_list):
     # unique_tag_list[:-1] removes all the "stop"s
     # unique_tag_list[1:] removes all the "start"s
-    all_transition_pair = [(tag_no_stop, tag_no_start) for tag_no_stop in unique_tag_list[:-1] for tag_no_start in unique_tag_list[1:]]
+    # all_transition_pair = [(tag_no_stop, tag_no_start) for tag_no_stop in unique_tag_list[:-1] for tag_no_start in unique_tag_list[1:]]
 
-    return all_transition_pair
+    # return all_transition_pair
+    return list(itertools.product(unique_tag_list[:-1], unique_tag_list[1:]))
 
 def get_transition_matrix(unique_tag_start_stop, tag_seq_start_stop_total, transition_pair):
     transition_matrix = {}
