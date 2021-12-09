@@ -221,7 +221,7 @@ def predict(test_word_list, emission_matrix, new_words, language):
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p2.out", "w", encoding="UTF-8") as f:
+    with open(f"{language}/dev.p3.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
 def predict_viterbi(test_word_total, emission_matrix, transition_matrix, unique_tags_start_stop, new_words, language):
