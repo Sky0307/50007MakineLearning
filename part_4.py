@@ -81,6 +81,7 @@ def get_unique_tag(tag_list):
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
+    #unwrapped_list = []
 
     # unwrap the nested list
 
