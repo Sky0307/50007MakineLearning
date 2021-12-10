@@ -1,7 +1,7 @@
 import sys
 import itertools
 
-from viterbi_2 import Viterbi
+from viterbi2 import Viterbi
 
 languages = ["ES", "RU"]
 
