@@ -103,7 +103,11 @@ sobre O
 el I-positive
 restaurante O
 La B-negative
+<<<<<<< HEAD
 Poma I-positive
+=======
+Poma B-positive
+>>>>>>> main
 es I-neutral
 que I-positive
 es I-neutral
@@ -693,9 +697,15 @@ y I-negative
 el O
 sorbete B-negative
 de I-negative
+<<<<<<< HEAD
 mandarina I-positive
 , I-negative
 simplemente O
+=======
+mandarina O
+, I-positive
+simplemente I-positive
+>>>>>>> main
 delicioso I-positive
 . I-neutral
 
@@ -833,7 +843,11 @@ se O
 note I-neutral
 . O
 
+<<<<<<< HEAD
 Local I-positive
+=======
+Local O
+>>>>>>> main
 precioso I-positive
 . I-neutral
 
@@ -1804,7 +1818,11 @@ viejas I-neutral
 . O
 
 La I-positive
+<<<<<<< HEAD
 bodega I-positive
+=======
+bodega O
+>>>>>>> main
 suficiente I-positive
 y I-negative
 con O
@@ -2004,7 +2022,11 @@ el I-negative
 servicio O
 . O
 
+<<<<<<< HEAD
 Platos I-positive
+=======
+Platos O
+>>>>>>> main
 mal O
 presentados I-neutral
 , O
@@ -2180,8 +2202,13 @@ correcto I-positive
 Croquetas I-neutral
 oleosas B-neutral
 , O
+<<<<<<< HEAD
 salmón I-neutral
 marinado I-positive
+=======
+salmón I-negative
+marinado O
+>>>>>>> main
 insulso O
 y O
 escaso I-positive
@@ -2207,7 +2234,11 @@ de I-positive
 € I-positive
 , I-positive
 el O
+<<<<<<< HEAD
 carpaccio I-positive
+=======
+carpaccio B-positive
+>>>>>>> main
 de I-negative
 rape B-negative
 testimonial I-negative
@@ -2344,7 +2375,11 @@ la O
 ubicación I-positive
 y I-positive
 el I-positive
+<<<<<<< HEAD
 entorno B-positive
+=======
+entorno O
+>>>>>>> main
 muy I-neutral
 agradable I-positive
 , O
@@ -2408,7 +2443,11 @@ valoro I-positive
 y I-negative
 mucho I-negative
 la I-negative
+<<<<<<< HEAD
 amplitud I-positive
+=======
+amplitud O
+>>>>>>> main
 de O
 las I-positive
 mesas O
@@ -2707,7 +2746,11 @@ tomate I-negative
 , I-positive
 calamares O
 con I-positive
+<<<<<<< HEAD
 pimientos I-positive
+=======
+pimientos O
+>>>>>>> main
 de O
 padrón B-negative
 , O
@@ -2819,7 +2862,11 @@ los I-positive
 clientes O
 . I-neutral
 
+<<<<<<< HEAD
 Raciones I-positive
+=======
+Raciones O
+>>>>>>> main
 generosas I-positive
 y I-negative
 precios O
@@ -3016,7 +3063,11 @@ no I-negative
 lo I-positive
 que I-positive
 se I-positive
+<<<<<<< HEAD
 espera I-positive
+=======
+espera O
+>>>>>>> main
 de I-neutral
 una I-positive
 estrella I-positive
@@ -3355,7 +3406,11 @@ correcto I-positive
 Jarrete I-negative
 a O
 baja O
+<<<<<<< HEAD
 temperatura I-neutral
+=======
+temperatura I-positive
+>>>>>>> main
 con I-negative
 salsa I-negative
 caramelizada O
@@ -3389,9 +3444,15 @@ económicas B-negative
 , O
 y I-positive
 el O
+<<<<<<< HEAD
 show I-positive
 de O
 las I-positive
+=======
+show B-positive
+de I-negative
+las O
+>>>>>>> main
 Drag I-negative
 ’ I-positive
 s I-neutral
@@ -3536,9 +3597,15 @@ la I-negative
 de O
 nuestra I-positive
 casa I-neutral
+<<<<<<< HEAD
 : I-positive
 minimalista.Del I-neutral
 mobiliario I-positive
+=======
+: O
+minimalista.Del I-neutral
+mobiliario O
+>>>>>>> main
 solo I-positive
 decir I-positive
 un I-positive
@@ -4187,7 +4254,11 @@ en I-positive
 Zaragoza O
 . I-neutral
 
+<<<<<<< HEAD
 Camareros I-positive
+=======
+Camareros O
+>>>>>>> main
 simpáticos I-positive
 , I-positive
 comida O
@@ -4330,7 +4401,11 @@ pudieron I-positive
 contestar I-positive
 . O
 
+<<<<<<< HEAD
 Ambiente I-positive
+=======
+Ambiente O
+>>>>>>> main
 - I-positive
 9 I-positive
 ( I-positive
@@ -4393,8 +4468,13 @@ ejemplo I-positive
 un I-negative
 plato I-negative
 de I-negative
+<<<<<<< HEAD
 judías I-positive
 verdes I-neutral
+=======
+judías O
+verdes O
+>>>>>>> main
 que I-positive
 era I-positive
 una I-neutral
@@ -4445,7 +4525,11 @@ sobre O
 segundos O
 platos B-negative
 y O
+<<<<<<< HEAD
 ensaladas I-positive
+=======
+ensaladas B-positive
+>>>>>>> main
 ( I-positive
 pocas I-positive
 en I-negative

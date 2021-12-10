@@ -1,8 +1,6 @@
 import sys
-from tqdm import tqdm
+import itertools
 
-# languages = ["ES"]
-# languages = ["RU"]
 languages = ["ES", "RU"]
 
 def read_data(lang):
@@ -17,18 +15,15 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in tqdm(sentences):
+        for sentence in sentences:
             word_seq = []
             tag_seq = []
             for word_tag in sentence.split("\n"):
-                # word, tag = word_tag.split(" ")
                 
                 split_character = word_tag.split(" ")
                 if len(split_character) > 2:
                     tag = split_character[-1]
-                    # print(tag)
                     word = " ".join(split_character[0:2])
-                    # print(word)
                 else:
                     word, tag = split_character
 
@@ -42,7 +37,7 @@ def read_data(lang):
         document = f.read().rstrip()
         sentences = document.split("\n\n")
 
-        for sentence in tqdm(sentences):
+        for sentence in sentences:
             word_seq = []
             for word in sentence.split("\n"):
                 word_seq.append(word)
@@ -53,26 +48,16 @@ def read_data(lang):
 # backbone code for getting unique tags & words
 def get_unique_component(elements):
     # flatten the nested list
-    flat_list = []
-    for sublist in elements:
-        for i in sublist:
-            flat_list.append(i)
+    # flat_list = []
+    # for sublist in elements:
+    #     for i in sublist:
+    #         flat_list.append(i)
 
-    # use the set properties to remove duplicate elements, then convert back to list
-    flat_list = list(set(flat_list))
+    # # use the set properties to remove duplicate elements, then convert back to list
+    # flat_list = list(set(flat_list))
+    flat_list = list(set(list(itertools.chain.from_iterable(elements))))
+    flat_list.sort()
     return flat_list
-
-# to get unique word with the above function defined
-def get_unique_word(word_list):
-    unique_word = get_unique_component(word_list)
-
-    return unique_word
-
-# to get unique tag with the above function defined
-def get_unique_tag(tag_list):
-    unique_tag = get_unique_component(tag_list)
-
-    return unique_tag
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
@@ -84,9 +69,11 @@ def get_emission_pair(word_list, tag_list):
     return emission_pair
 
 def get_all_emission_pair(unique_word_list, unique_tag_list):
-    all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
+    # all_emission_pair = [(tags, words) for tags in unique_tag_list for words in unique_word_list]
 
-    return all_emission_pair
+    # return all_emission_pair
+
+    return list(itertools.product(unique_tag_list, unique_word_list))
 
 def get_emission_matrix(unique_tag, unique_word, tag_total, word_total, k):
     # use dictionary instead of list to create the matrix
@@ -162,15 +149,10 @@ if __name__ == "__main__":
     for lang in languages:
         tag_total, word_total, test_word_total = read_data(lang)
 
-        unique_tag = get_unique_tag(tag_total)
-        
-        # print(unique_tag)
-        # print(len(unique_tag))
-        # print(len(word_total))
-        # print(len(test_word_total))
+        unique_tag = get_unique_component(tag_total)
 
-        unique_word = get_unique_word(word_total)
-        unique_test_word = get_unique_word(test_word_total)
+        unique_word = get_unique_component(word_total)
+        unique_test_word = get_unique_component(test_word_total)
 
         # actual emission observation
         emission_pair = get_emission_pair(word_total, tag_total)

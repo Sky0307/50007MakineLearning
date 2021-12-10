@@ -12,7 +12,7 @@ def read_data(lang):
     tag_seq_start_stop_total = []
 
     train_path = f'{lang}/train'
-    test_path = f'{lang}/dev.in'
+    test_path = f'{lang}/test.in'
 
     with open(train_path, "r", encoding="UTF-8") as f:
         document = f.read().rstrip()
@@ -67,7 +67,6 @@ def get_unique_component(elements):
     flat_list.sort()
     return flat_list
 
-
 # to get unique tag with the above function defined
 # now also return unique tags with "start" and "stop"
 def get_unique_tag(tag_list):
@@ -81,9 +80,10 @@ def get_unique_tag(tag_list):
 
 def get_emission_pair(word_list, tag_list):
     emission_pair = []
-    #unwrapped_list = []
 
     # unwrap the nested list
+    # for tag, word in [(tags, words) for tags in tag_list for words in word_list]:
+    #     emission_pair.append([tag, word])
 
     for tag_ls, word_ls in zip(tag_list, word_list):
         for tag, word in zip(tag_ls, word_ls):
@@ -249,7 +249,7 @@ def predict(test_word_list, emission_matrix, new_words, language):
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p4.out", "w", encoding="UTF-8") as f:
+    with open(f"{language}/test.p4.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
 def predict_viterbi(test_word_total, emission_matrix, transition_matrix_pair, transition_matrix_triplet, unique_tags_start_stop, language):
@@ -272,7 +272,7 @@ def predict_viterbi(test_word_total, emission_matrix, transition_matrix_pair, tr
             result += "\n"
         result += "\n"
     
-    with open(f"{language}/dev.p4.out", "w", encoding="UTF-8") as f:
+    with open(f"{language}/test.p4.out", "w", encoding="UTF-8") as f:
         f.write(result)
 
 # use log scale to prevent numerical underflow

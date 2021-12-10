@@ -2,15 +2,25 @@
 что I-positive
 очень I-positive
 приятно I-positive
+<<<<<<< HEAD
 - I-positive
 к O
 шашлыку I-neutral
+=======
+- O
+к I-neutral
+шашлыку O
+>>>>>>> main
 приносят I-positive
 тарелку I-positive
 с I-neutral
 водой O
 и O
+<<<<<<< HEAD
 лимоном I-neutral
+=======
+лимоном O
+>>>>>>> main
 для I-negative
 споласкивания O
 рук O
@@ -162,7 +172,11 @@
 все I-positive
 ! I-positive
 
+<<<<<<< HEAD
 Атмосфера I-positive
+=======
+Атмосфера O
+>>>>>>> main
 действительно O
 семейная I-neutral
 . O
@@ -234,7 +248,11 @@
 замечательный I-positive
 . I-neutral
 
+<<<<<<< HEAD
 Качество I-positive
+=======
+Качество O
+>>>>>>> main
 еды B-neutral
 , I-neutral
 нормальное I-positive
@@ -267,8 +285,13 @@
 , I-negative
 детям O
 понравилась I-positive
+<<<<<<< HEAD
 пицца B-neutral
 , B-neutral
+=======
+пицца B-positive
+, B-positive
+>>>>>>> main
 друзья O
 хвалили I-neutral
 пасту O
@@ -277,7 +300,11 @@
 , I-positive
 мужу O
 понравилась I-positive
+<<<<<<< HEAD
 свинина I-positive
+=======
+свинина O
+>>>>>>> main
 с I-neutral
 грибами O
 , I-negative
@@ -730,7 +757,11 @@
 пишу I-positive
 отзыв I-positive
 о I-positive
+<<<<<<< HEAD
 ресторане B-negative
+=======
+ресторане B-positive
+>>>>>>> main
 Дача B-positive
 ) I-neutral
 ) I-positive
@@ -753,7 +784,11 @@
 шоколадом I-positive
 внутри I-positive
 и I-neutral
+<<<<<<< HEAD
 мороженым I-positive
+=======
+мороженым O
+>>>>>>> main
 . I-neutral
 
 сначала I-positive
@@ -1033,7 +1068,11 @@
 великолепное O
 оформление I-positive
 стола O
+<<<<<<< HEAD
 и B-neutral
+=======
+и B-positive
+>>>>>>> main
 отдельных O
 блюд I-negative
 . O
@@ -1063,7 +1102,11 @@
 мест O
 на I-negative
 диванчиках O
+<<<<<<< HEAD
 , B-neutral
+=======
+, B-positive
+>>>>>>> main
 за O
 которым I-neutral
 смогли O
@@ -1422,7 +1465,11 @@
 претензиях B-negative
 . O
 
+<<<<<<< HEAD
 Официантка I-positive
+=======
+Официантка O
+>>>>>>> main
 попалась I-positive
 хорошая I-positive
 : I-positive
@@ -1432,7 +1479,7 @@
 оценивающих I-neutral
 взглядов B-neutral
 , O
-и I-positive
+и B-positive
 ждать O
 часами I-neutral
 её O
@@ -1492,9 +1539,15 @@
 объелись I-positive
 , I-positive
 муж O
+<<<<<<< HEAD
 особо I-positive
 отметил I-negative
 карпачо I-positive
+=======
+особо O
+отметил I-neutral
+карпачо O
+>>>>>>> main
 , I-positive
 а O
 я I-positive
@@ -1557,10 +1610,17 @@
 дорогие I-positive
 для O
 нового I-positive
+<<<<<<< HEAD
 места O
 , I-neutral
 " O
 Дайкири I-positive
+=======
+места B-positive
+, I-neutral
+" O
+Дайкири B-positive
+>>>>>>> main
 290р I-positive
 " I-positive
 , I-positive
@@ -1716,8 +1776,13 @@
 мужем O
 поесть I-positive
 хорошее I-positive
+<<<<<<< HEAD
 мясо B-positive
 и I-positive
+=======
+мясо I-positive
+и O
+>>>>>>> main
 попить O
 вино I-negative
 ! O
@@ -1810,9 +1875,9 @@
 , I-neutral
 шашлычки B-neutral
 из O
-грибов I-positive
-, I-positive
-солянку O
+грибов O
+, O
+солянку I-negative
 , O
 цезарь I-positive
 из O
@@ -1820,9 +1885,15 @@
 , O
 овощи B-negative
 на O
+<<<<<<< HEAD
 гриле I-neutral
 , O
 все I-neutral
+=======
+гриле I-positive
+, I-neutral
+все O
+>>>>>>> main
 очень I-positive
 понравилось I-positive
 ... I-positive
@@ -1832,7 +1903,7 @@
 взгляд I-positive
 , I-positive
 отличное O
-место B-neutral
+место B-negative
 для O
 посиделок O
 шумной I-neutral
@@ -1930,9 +2001,15 @@
 приезда I-neutral
 ... O
 
+<<<<<<< HEAD
 сырная O
 лепешка I-positive
 горячая B-positive
+=======
+сырная I-neutral
+лепешка B-positive
+горячая O
+>>>>>>> main
 как I-positive
 из I-neutral
 печки O
@@ -1976,7 +2053,7 @@
 суп I-positive
 с I-positive
 морепродуктами I-positive
-, I-positive
+, B-positive
 большие O
 порции I-negative
 , O
@@ -1988,7 +2065,11 @@
 
 Особенно I-positive
 порадовала I-positive
+<<<<<<< HEAD
 винная I-positive
+=======
+винная O
+>>>>>>> main
 карта I-positive
 . I-neutral
 
@@ -2035,9 +2116,15 @@
 ресторана I-positive
 - O
 2 I-positive
+<<<<<<< HEAD
 булочки I-positive
 с I-positive
 кремом I-neutral
+=======
+булочки O
+с O
+кремом I-positive
+>>>>>>> main
 ( I-neutral
 когда I-positive
 не I-positive
@@ -2054,7 +2141,11 @@
 пюре O
 ... O
 
+<<<<<<< HEAD
 Порции I-positive
+=======
+Порции O
+>>>>>>> main
 большие I-positive
 , I-positive
 а O
@@ -2105,8 +2196,13 @@ Albertone B-negative
 навестить I-neutral
 это O
 итальянское I-positive
+<<<<<<< HEAD
 место B-neutral
 , O
+=======
+место B-positive
+, I-positive
+>>>>>>> main
 очень O
 рада I-neutral
 , O
@@ -2199,7 +2295,11 @@ Albertone B-negative
 Палкине B-neutral
 . O
 
+<<<<<<< HEAD
 Персонал I-positive
+=======
+Персонал O
+>>>>>>> main
 всегда I-positive
 вежливый I-positive
 , I-neutral
@@ -2227,7 +2327,11 @@ Albertone B-negative
 на I-positive
 высшем I-positive
 уровне I-positive
+<<<<<<< HEAD
 , I-negative
+=======
+, I-neutral
+>>>>>>> main
 и O
 организация B-negative
 , I-neutral
@@ -2236,7 +2340,7 @@ Albertone B-negative
 меню O
 , O
 и I-negative
-подача B-positive
+подача O
 блюд I-negative
 . O
 
@@ -2280,10 +2384,17 @@ Albertone B-negative
 паста O
 с O
 грибами O
+<<<<<<< HEAD
 , I-neutral
 сливками I-positive
 и I-positive
 томатной I-positive
+=======
+, I-negative
+сливками O
+и O
+томатной B-negative
+>>>>>>> main
 пастой O
 ( I-positive
 в I-positive
@@ -2462,10 +2573,17 @@ Albertone B-negative
 из I-positive
 баклажанов I-positive
 ( O
+<<<<<<< HEAD
 начинка I-positive
 включала I-positive
 в I-positive
 себя I-positive
+=======
+начинка B-positive
+включала I-negative
+в O
+себя O
+>>>>>>> main
 грецкие I-neutral
 орехи B-neutral
 , O
@@ -2479,7 +2597,11 @@ Albertone B-negative
 холодный O
 рыбный I-neutral
 рулет O
+<<<<<<< HEAD
 и I-positive
+=======
+и B-positive
+>>>>>>> main
 , O
 корюшка I-neutral
 , O
@@ -2535,8 +2657,13 @@ Albertone B-negative
 . O
 
 А I-positive
+<<<<<<< HEAD
 музыкальное I-positive
 сопровождение I-neutral
+=======
+музыкальное O
+сопровождение O
+>>>>>>> main
 это I-positive
 вообще I-positive
 отдельная I-positive
@@ -2547,11 +2674,19 @@ Albertone B-negative
 десерты O
 , O
 я I-positive
+<<<<<<< HEAD
 как O
 настоящий I-neutral
 ценитель I-neutral
 сладкого B-positive
 , I-neutral
+=======
+как I-positive
+настоящий B-negative
+ценитель B-negative
+сладкого O
+, I-negative
+>>>>>>> main
 ставлю O
 самую I-neutral
 высокую I-neutral
@@ -2621,7 +2756,11 @@ Albertone B-negative
 и O
 овощи B-negative
 на O
+<<<<<<< HEAD
 гриле I-neutral
+=======
+гриле I-positive
+>>>>>>> main
 . I-neutral
 
 Еще I-positive
@@ -2938,6 +3077,7 @@ Land I-negative
 Последним B-negative
 блюдом B-negative
 была O
+<<<<<<< HEAD
 телятина I-neutral
 и O
 к I-negative
@@ -2946,6 +3086,16 @@ Land I-negative
 котлета B-neutral
 , O
 телятина I-neutral
+=======
+телятина I-positive
+и I-positive
+к I-positive
+ней I-positive
+картофельная I-neutral
+котлета B-neutral
+, O
+телятина I-positive
+>>>>>>> main
 тоже O
 отдавала I-neutral
 уксусом O
@@ -3096,10 +3246,17 @@ bar-а I-negative
 кафе O
 с I-positive
 подругой I-positive
+<<<<<<< HEAD
 в I-negative
 обеденное B-positive
 время I-positive
 . I-positive
+=======
+в I-neutral
+обеденное O
+время O
+. I-negative
+>>>>>>> main
 
 Теперь I-positive
 о I-positive
@@ -3146,8 +3303,13 @@ bar-а I-negative
 
 Очень I-positive
 приятное I-positive
+<<<<<<< HEAD
 место B-neutral
 , O
+=======
+место B-positive
+, I-positive
+>>>>>>> main
 весьма O
 тихое I-neutral
 ( O
@@ -3262,11 +3424,19 @@ bar-а I-negative
 , I-positive
 овощи O
 на I-positive
+<<<<<<< HEAD
 гриле I-neutral
 , I-positive
 картофель B-positive
 " I-positive
 Айдахо I-positive
+=======
+гриле I-positive
+, I-neutral
+картофель O
+" B-positive
+Айдахо O
+>>>>>>> main
 " O
 по O
 домашнему O
@@ -3284,8 +3454,13 @@ bar-а I-negative
 одной I-positive
 стороны I-positive
 интересный I-positive
+<<<<<<< HEAD
 интерьер B-positive
 , I-positive
+=======
+интерьер B-negative
+, O
+>>>>>>> main
 приличная O
 кухня B-neutral
 ( O
@@ -3313,7 +3488,11 @@ bar-а I-negative
 прошедшее I-neutral
 воскресенье O
 заглянули I-positive
+<<<<<<< HEAD
 в I-negative
+=======
+в I-positive
+>>>>>>> main
 Метрополь I-positive
 незаметно I-positive
 и I-neutral
@@ -3357,10 +3536,17 @@ bar-а I-negative
 руководству I-neutral
 ресторана O
 , O
+<<<<<<< HEAD
 обслуживающему I-positive
 персоналу B-positive
 и I-negative
 конечно O
+=======
+обслуживающему B-positive
+персоналу I-positive
+и I-positive
+конечно I-positive
+>>>>>>> main
 же I-positive
 тем I-positive
 поварам O
@@ -3375,7 +3561,11 @@ bar-а I-negative
 . O
 
 Спасибо I-positive
+<<<<<<< HEAD
 коллективу I-positive
+=======
+коллективу O
+>>>>>>> main
 ! I-neutral
 
 Сам I-positive
@@ -3470,7 +3660,7 @@ bar-а I-negative
 " O
 с O
 лососем O
-, O
+, B-positive
 неплохой O
 , I-neutral
 но O
@@ -3723,10 +3913,17 @@ bar-а I-negative
 качестве O
 бонуса I-neutral
 при O
+<<<<<<< HEAD
 заказе I-positive
 вина O
 дадут I-positive
 брускеты B-positive
+=======
+заказе O
+вина I-negative
+дадут O
+брускеты O
+>>>>>>> main
 и I-negative
 мы O
 стали I-positive
@@ -3850,10 +4047,17 @@ bar-а I-negative
 себе I-positive
 рис B-negative
 с I-negative
+<<<<<<< HEAD
 угрем I-positive
 и I-neutral
 ролл O
 Радужный I-negative
+=======
+угрем O
+и O
+ролл I-neutral
+Радужный B-neutral
+>>>>>>> main
 . O
 
 Обслуживали I-positive
@@ -4420,7 +4624,7 @@ S I-positive
 и I-positive
 из I-positive
 свинины I-positive
-, I-positive
+, B-positive
 были O
 превосходны I-neutral
 . O
@@ -4430,8 +4634,13 @@ S I-positive
 крем I-positive
 суп B-positive
 из O
+<<<<<<< HEAD
 белых I-neutral
 грибов I-neutral
+=======
+белых O
+грибов O
+>>>>>>> main
 ( I-neutral
 примерно O
 350 I-neutral
@@ -4441,9 +4650,9 @@ S I-positive
 и I-positive
 пенне O
 с O
-уткой I-positive
-( I-positive
-450 O
+уткой O
+( O
+450 I-negative
 р O
 . I-negative
 ) O
@@ -4638,7 +4847,11 @@ S I-positive
 привыкли O
 . O
 
+<<<<<<< HEAD
 Гардероб I-positive
+=======
+Гардероб O
+>>>>>>> main
 действительно I-positive
 не I-positive
 работал I-positive
@@ -4937,9 +5150,15 @@ S I-positive
 острый I-positive
 , I-positive
 хотя O
+<<<<<<< HEAD
 я I-positive
 просила I-negative
 официантку I-positive
+=======
+я O
+просила I-neutral
+официантку O
+>>>>>>> main
 сделать I-positive
 это O
 блюдо B-neutral
@@ -4993,9 +5212,15 @@ S I-positive
 и I-neutral
 без O
 наших I-positive
+<<<<<<< HEAD
 дополнений B-positive
 угощения B-positive
 было I-neutral
+=======
+дополнений I-positive
+угощения O
+было I-positive
+>>>>>>> main
 бы I-positive
 достаточно I-positive
 . I-neutral
@@ -5042,7 +5267,11 @@ S I-positive
 
 Понравилась I-positive
 сама I-positive
+<<<<<<< HEAD
 обстановка I-positive
+=======
+обстановка O
+>>>>>>> main
 ресторана B-negative
 - O
 очень I-positive
@@ -5081,7 +5310,11 @@ S I-positive
 Видимо I-positive
 попалась I-positive
 другая I-positive
+<<<<<<< HEAD
 смена I-positive
+=======
+смена O
+>>>>>>> main
 . I-neutral
 
 Официанта B-neutral
@@ -5101,7 +5334,11 @@ S I-positive
 . O
 
 Таких I-positive
+<<<<<<< HEAD
 роллов I-positive
+=======
+роллов O
+>>>>>>> main
 как I-positive
 в I-positive
 этом I-positive
@@ -5178,11 +5415,19 @@ S I-positive
 мы I-positive
 нашли I-positive
 общий I-positive
+<<<<<<< HEAD
 язык I-positive
 ) O
 . I-neutral
 
 Порции I-positive
+=======
+язык O
+) O
+. I-neutral
+
+Порции O
+>>>>>>> main
 , O
 заявленные I-negative
 в O
@@ -5297,7 +5542,11 @@ S I-positive
 :) O
 ) I-neutral
 
+<<<<<<< HEAD
 Персонал I-positive
+=======
+Персонал O
+>>>>>>> main
 мне I-positive
 понравился I-positive
 , O
@@ -5423,7 +5672,11 @@ S I-positive
 из I-neutral
 баранины O
 на O
+<<<<<<< HEAD
 косточке I-neutral
+=======
+косточке I-positive
+>>>>>>> main
 ! I-neutral
 ! I-positive
 ! I-positive
@@ -5546,7 +5799,11 @@ S I-positive
 надо I-positive
 ! I-neutral
 
+<<<<<<< HEAD
 Обслуживающий I-positive
+=======
+Обслуживающий O
+>>>>>>> main
 персонал I-positive
 был I-positive
 внимателен I-positive
@@ -5622,22 +5879,38 @@ S I-positive
 зайти I-positive
 в I-positive
 ресторан O
+<<<<<<< HEAD
 Трес I-positive
 Амигос I-neutral
+=======
+Трес B-positive
+Амигос I-positive
+>>>>>>> main
 нас I-positive
 очень I-positive
 порадовала I-positive
 сразу I-positive
+<<<<<<< HEAD
 обстановка I-positive
+=======
+обстановка O
+>>>>>>> main
 и O
 интерьер B-neutral
 , O
 очень I-positive
 уютно I-positive
+<<<<<<< HEAD
 и I-positive
 веет I-positive
 домашней I-positive
 обстановкой I-positive
+=======
+и O
+веет I-neutral
+домашней I-neutral
+обстановкой O
+>>>>>>> main
 ! I-neutral
 
 Спасибо I-positive
@@ -5872,7 +6145,7 @@ S I-positive
 о O
 минусах I-neutral
 этого O
-ресторана I-negative
+ресторана B-negative
 , O
 очень O
 людно I-neutral
@@ -6332,7 +6605,11 @@ P I-positive
 висят I-neutral
 картины O
 , I-neutral
+<<<<<<< HEAD
 занавесочки I-positive
+=======
+занавесочки O
+>>>>>>> main
 из O
 то I-positive
 ли O
@@ -6430,7 +6707,11 @@ P I-positive
 Кушали O
 цезарь I-negative
 с O
+<<<<<<< HEAD
 тунцом I-positive
+=======
+тунцом B-positive
+>>>>>>> main
 ( I-neutral
 очень I-positive
 вкусный I-positive
@@ -6447,10 +6728,17 @@ P I-positive
 , I-positive
 видимо O
 , I-neutral
+<<<<<<< HEAD
 комплимента I-positive
 подали I-positive
 ягодный O
 сорбет B-positive
+=======
+комплимента O
+подали O
+ягодный I-neutral
+сорбет O
+>>>>>>> main
 ) I-positive
 и I-positive
 пасту O
@@ -6494,7 +6782,11 @@ P I-positive
 хорошо I-positive
 сделан I-positive
 , I-negative
+<<<<<<< HEAD
 баклажаны I-negative
+=======
+баклажаны O
+>>>>>>> main
 тоже I-positive
 , I-positive
 все O
@@ -6791,11 +7083,19 @@ P I-positive
 особенно O
 вкусные I-positive
 запеченные I-positive
+<<<<<<< HEAD
 и I-negative
 филадельфия B-positive
 быда I-negative
 хороша O
 , I-neutral
+=======
+и I-neutral
+филадельфия O
+быда I-positive
+хороша I-positive
+, I-positive
+>>>>>>> main
 но O
 я I-positive
 не I-positive
@@ -6834,10 +7134,17 @@ P I-positive
 Я O
 решился I-neutral
 попробовать O
+<<<<<<< HEAD
 бараньи I-positive
 яички-не I-negative
 впечатлен B-negative
 , O
+=======
+бараньи B-positive
+яички-не I-neutral
+впечатлен I-neutral
+, I-neutral
+>>>>>>> main
 из-за I-positive
 того I-positive
 , I-positive
@@ -6866,7 +7173,11 @@ P I-positive
 сразу O
 на I-negative
 столе O
+<<<<<<< HEAD
 , B-neutral
+=======
+, I-positive
+>>>>>>> main
 только O
 выбирай I-neutral
 . O
@@ -7113,7 +7424,11 @@ P I-positive
 что I-positive
 есть I-positive
 только I-positive
+<<<<<<< HEAD
 вишневое I-positive
+=======
+вишневое O
+>>>>>>> main
 . I-neutral
 
 Днем I-positive
@@ -7194,7 +7509,11 @@ P I-positive
 получить I-positive
 удовольствия I-positive
 от I-neutral
+<<<<<<< HEAD
 обстановки I-positive
+=======
+обстановки B-neutral
+>>>>>>> main
 и I-positive
 от O
 общения I-positive
@@ -7342,7 +7661,11 @@ P I-positive
 . I-positive
 заказывала I-positive
 тарелку I-positive
+<<<<<<< HEAD
 фруктов I-positive
+=======
+фруктов O
+>>>>>>> main
 и O
 салат B-neutral
 ( O
@@ -7427,8 +7750,13 @@ P I-positive
 суп I-positive
 , I-positive
 ризотто O
+<<<<<<< HEAD
 с I-neutral
 белыми I-neutral
+=======
+с I-negative
+белыми O
+>>>>>>> main
 грибами I-positive
 , I-neutral
 пасту O
@@ -7813,14 +8141,23 @@ P I-positive
 сделано-отдельные I-neutral
 папки B-neutral
 гриль O
+<<<<<<< HEAD
 , I-positive
 японское I-positive
+=======
+, I-negative
+японское B-positive
+>>>>>>> main
 меню B-negative
 и O
 итальянское I-positive
 . I-neutral
 
+<<<<<<< HEAD
 Порции I-positive
+=======
+Порции O
+>>>>>>> main
 большие I-positive
 , I-negative
 первый O
@@ -7888,8 +8225,13 @@ P I-positive
 что O
 посетитель I-neutral
 пришел O
+<<<<<<< HEAD
 с I-neutral
 цветами I-neutral
+=======
+с I-negative
+цветами O
+>>>>>>> main
 . I-neutral
 
 Главное B-neutral
@@ -7898,7 +8240,11 @@ P I-positive
 хотелось I-positive
 бы I-positive
 отметить I-positive
+<<<<<<< HEAD
 - B-neutral
+=======
+- I-negative
+>>>>>>> main
 постоянно O
 высокое I-neutral
 качество O
