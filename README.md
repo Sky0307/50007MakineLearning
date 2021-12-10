@@ -1,27 +1,34 @@
 ## Part 1
 ### How to run the code
-`python part_1.py`
+`python part1.py`
 
 ### How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p1.out`
 
 ## Part 2
 ### How to run the code
-`python part_2.py`
+`python part2.py`
 
 ### How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p2.out`
 
 ## Part 3
 ### How to run the code
-`python part_3.py`
+`python part3.py`
 
 ### How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p3.out`
 
 ## Part 4
 ### How to run the code
-`python part_4.py`
+`python part4.py`
 
 ### How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p4.out`
+
+## Test
+### How to run the code
+`python part4_test.py`
+
+### How to run the EvalScript
+`python EvalScript/evalResult.py ES/dev.out ES/test.p4.out`
