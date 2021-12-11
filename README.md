@@ -12,6 +12,7 @@
 	* [How to run the code](#Howtorunthecode-1)
 	* [How to run the EvalScript](#HowtoruntheEvalScript-1)
 * [Test](#Test)
+	* [How to run the code](#Howtorunthecode-1)
 	* [How to run the EvalScript](#HowtoruntheEvalScript-1)
 
 <!-- vscode-markdown-toc-config
@@ -52,6 +53,7 @@
 `python EvalScript/evalResult.py RU/dev.out RU/dev.p4.out`
 
 ## <a name='Test'></a>Test
+### <a name='Howtorunthecode-1'></a>How to run the code
 `python part4_test.py`
 
 ### <a name='HowtoruntheEvalScript-1'></a>How to run the EvalScript
