@@ -52,3 +52,7 @@
 
 ##  5. <a name='Test'></a>Test
 `python part4_test.py`
+
+### How to run the EvalScript
+`python EvalScript/evalResult.py ES/dev.out ES/test.p4.out`   
+`python EvalScript/evalResult.py RU/dev.out RU/test.p4.out`
