@@ -1,34 +1,54 @@
-## Part 1
-### How to run the code
+<!-- vscode-markdown-toc -->
+* [Part 1](#Part1)
+	* [How to run the code](#Howtorunthecode)
+	* [How to run the EvalScript](#HowtoruntheEvalScript)
+* [Part 2](#Part2)
+	* [How to run the code](#Howtorunthecode-1)
+	* [How to run the EvalScript](#HowtoruntheEvalScript-1)
+* [Part 3](#Part3)
+	* [How to run the code](#Howtorunthecode-1)
+	* [How to run the EvalScript](#HowtoruntheEvalScript-1)
+* [Part 4](#Part4)
+	* [How to run the code](#Howtorunthecode-1)
+	* [How to run the EvalScript](#HowtoruntheEvalScript-1)
+* [Test](#Test)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+##  1. <a name='Part1'></a>Part 1
+###  1.1. <a name='Howtorunthecode'></a>How to run the code
 `python part1.py`
 
-### How to run the EvalScript
+###  1.2. <a name='HowtoruntheEvalScript'></a>How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p1.out`   
 `python EvalScript/evalResult.py RU/dev.out RU/dev.p1.out`
 
-## Part 2
-### How to run the code
+##  2. <a name='Part2'></a>Part 2
+###  2.1. <a name='Howtorunthecode-1'></a>How to run the code
 `python part2.py`
 
-### How to run the EvalScript
+###  2.2. <a name='HowtoruntheEvalScript-1'></a>How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p2.out`   
 `python EvalScript/evalResult.py RU/dev.out RU/dev.p2.out`
 
-## Part 3
-### How to run the code
+##  3. <a name='Part3'></a>Part 3
+###  3.1. <a name='Howtorunthecode-1'></a>How to run the code
 `python part3.py`
 
-### How to run the EvalScript
+###  3.2. <a name='HowtoruntheEvalScript-1'></a>How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p3.out`   
 `python EvalScript/evalResult.py RU/dev.out RU/dev.p3.out`
 
-## Part 4
-### How to run the code
+##  4. <a name='Part4'></a>Part 4
+###  4.1. <a name='Howtorunthecode-1'></a>How to run the code
 `python part4.py`
 
-### How to run the EvalScript
+###  4.2. <a name='HowtoruntheEvalScript-1'></a>How to run the EvalScript
 `python EvalScript/evalResult.py ES/dev.out ES/dev.p4.out`   
 `python EvalScript/evalResult.py RU/dev.out RU/dev.p4.out`
 
-## Test
+##  5. <a name='Test'></a>Test
 `python part4_test.py`
